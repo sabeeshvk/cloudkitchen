@@ -1,0 +1,11 @@
+arp/training/cloudkitchen/services/CategoryServiceImpl.class
+arp/training/cloudkitchen/CloudkitchenApplication.class
+arp/training/cloudkitchen/services/ProductServiceImpl.class
+arp/training/cloudkitchen/controller/CategoryController.class
+arp/training/cloudkitchen/repository/CategoryRepository.class
+arp/training/cloudkitchen/controller/ProductController.class
+arp/training/cloudkitchen/services/ProductService.class
+arp/training/cloudkitchen/model/Category.class
+arp/training/cloudkitchen/repository/ProductRepository.class
+arp/training/cloudkitchen/model/Product.class
+arp/training/cloudkitchen/services/CategoryService.class
