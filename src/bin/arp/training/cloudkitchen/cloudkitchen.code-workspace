@@ -1,19 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "../../../../../../../springboot/rest-api/rest-api"
-		},
-		{
-			"path": "../../../../../../../dapr/quickstarts/pub_sub/java/sdk/order-processor"
-		},
-		{
-			"path": "../../../../../../../dapr/quickstarts/pub_sub/java/sdk/checkout"
-		},
-		{
-			"path": "../../../../../.."
-		}
-	],
-	"settings": {
-		"java.configuration.updateBuildConfiguration": "interactive"
-	}
+    "folders": [
+        {
+            "path": "../../../../.."
+        }
+    ]
 }
