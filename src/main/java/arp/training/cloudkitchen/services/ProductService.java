@@ -10,6 +10,6 @@ public interface ProductService {
 
     public void saveOrUpdate(Product product) ;
 
-    public void deleteCategoryById(Long id) ;
+    public void deleteProductById(Long id) ;
 
 }

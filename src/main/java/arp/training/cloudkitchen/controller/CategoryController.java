@@ -25,7 +25,7 @@ public class CategoryController {
          categoryService.saveOrUpdate(category);
     }
 
-    @GetMapping(value = "/v1/getcategory")
+    @GetMapping(value = "/v1/categories")
     public List<Category> getCategory() {
         return categoryService.getCategoryList();
     }

@@ -21,19 +21,19 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping("/v1/product")
-    private int saveCategory(@RequestBody Product product) {
+    private long saveProduct(@RequestBody Product product) {
         productService.saveOrUpdate(product);
-        return product.getId();
+        return product.getProductId();
     }
 
-    @GetMapping(value = "/v1/getProduct")
+    @GetMapping(value = "/v1/products")
     public List<Product> getProduct() {
         return productService.getProductList();
     }
 
     @DeleteMapping("/v1/product/{productId}")
-    private void deleteProduct(@PathVariable("categoryId") Long categoryId) {
-        productService.deleteCategoryById(categoryId);
+    private void deleteProduct(@PathVariable("productId") Long productId) {
+        productService.deleteProductById(productId);
     }
 
 }

@@ -8,9 +8,9 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Product {
-    @Id @GeneratedValue
+    @Id 
     private long productId;
-    private String pName;
+    private String name;
     private String price;
     private String description;
 
@@ -22,12 +22,12 @@ public class Product {
         this.productId = productId;
     }
 
-    public String getpName() {
-        return pName;
+    public String getName() {
+        return name;
     }
 
-    public void setpName(String pName) {
-        this.pName = pName;
+    public void setName(String pName) {
+        this.name = pName;
     }
 
     public String getPrice() {
@@ -46,8 +46,5 @@ public class Product {
         this.description = description;
     }
 
-    public int getId() {
-        return 0;
-    }
 
 }
