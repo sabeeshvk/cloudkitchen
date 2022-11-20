@@ -20,18 +20,18 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @PostMapping("/product")
+    @PostMapping("/v1/product")
     private int saveCategory(@RequestBody Product product) {
         productService.saveOrUpdate(product);
         return product.getId();
     }
 
-    @GetMapping(value = "/getProduct")
+    @GetMapping(value = "/v1/getProduct")
     public List<Product> getProduct() {
         return productService.getProductList();
     }
 
-    @DeleteMapping("/product/{productId}")
+    @DeleteMapping("/v1/product/{productId}")
     private void deleteProduct(@PathVariable("categoryId") Long categoryId) {
         productService.deleteCategoryById(categoryId);
     }

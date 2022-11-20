@@ -20,17 +20,17 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @PostMapping("/category")
+    @PostMapping("/v1/category")
     private void saveCategory(@RequestBody Category category) {
          categoryService.saveOrUpdate(category);
     }
 
-    @GetMapping(value = "/getcategory")
+    @GetMapping(value = "/v1/getcategory")
     public List<Category> getCategory() {
         return categoryService.getCategoryList();
     }
 
-    @DeleteMapping("/category/{categoryId}")
+    @DeleteMapping("/v1/category/{categoryId}")
     private void deleteCategory(@PathVariable("categoryId") Long categoryId) {
         categoryService.deleteCategoryById(categoryId);
     }
