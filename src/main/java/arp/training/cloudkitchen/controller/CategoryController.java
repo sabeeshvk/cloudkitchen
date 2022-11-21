@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import arp.training.cloudkitchen.model.Category;
 import arp.training.cloudkitchen.services.CategoryService;
+import io.swagger.v3.oas.models.annotations.OpenAPI30;
 
 
 @RestController
@@ -20,17 +22,24 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @PostMapping("/v1/category")
+    @PostMapping("/menu/v1/categories")
     private void saveCategory(@RequestBody Category category) {
          categoryService.saveOrUpdate(category);
     }
 
-    @GetMapping(value = "/v1/categories")
+    @GetMapping(value = "/menu/v1/categories")
     public List<Category> getCategory() {
         return categoryService.getCategoryList();
     }
 
-    @DeleteMapping("/v1/category/{categoryId}")
+    @GetMapping(value = "/menu/v1/categories/{categoryId}")
+    public Category getCategory(@PathVariable("categoryId") Long categeoryId) {
+        return categoryService.getCategory(categeoryId);
+    }
+
+
+    @DeleteMapping("/menu/v1/categories/{categoryId}")
+    @OpenAPI30
     private void deleteCategory(@PathVariable("categoryId") Long categoryId) {
         categoryService.deleteCategoryById(categoryId);
     }

@@ -12,11 +12,11 @@ import io.swagger.v3.oas.models.info.License;
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI springShopOpenAPI() {
+    public OpenAPI cloudKitchenOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
                 .title("Cloud Kitchen API")
-                .description("API for menu setting for sample Cloud Kitchen")
+                .description("API for menu for Cloud Kitchen")
                 .version("1.0")
                 .license(new License().name("Apache 2.0")))
                 ;

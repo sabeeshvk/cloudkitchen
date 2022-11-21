@@ -20,18 +20,24 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @PostMapping("/v1/product")
+    @PostMapping("/menu/v1/products")
     private long saveProduct(@RequestBody Product product) {
         productService.saveOrUpdate(product);
         return product.getProductId();
     }
 
-    @GetMapping(value = "/v1/products")
+    @GetMapping(value = "/menu/v1/products")
     public List<Product> getProduct() {
         return productService.getProductList();
     }
 
-    @DeleteMapping("/v1/product/{productId}")
+    @GetMapping(value = "/menu/v1/products/{productId}")
+    public Product getProduct(@PathVariable("productId") Long productId) {
+        return productService.getProduct(productId);
+    }
+
+
+    @DeleteMapping("/menu/v1/products/{productId}")
     private void deleteProduct(@PathVariable("productId") Long productId) {
         productService.deleteProductById(productId);
     }
