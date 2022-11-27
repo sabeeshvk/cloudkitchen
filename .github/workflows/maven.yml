@@ -18,6 +18,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+        JASYPT_ENCRYPTOR_PASSWORD: ${{secrets.JASYPT_ENCRYPTOR_PASSWORD}}
 
     steps:
     - name: Public IP
