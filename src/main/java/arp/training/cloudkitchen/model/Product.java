@@ -13,7 +13,7 @@ public class Product {
     @Id 
     private long productId;
     private String name;
-    private String price;
+    private float price;
     private String description;
 
     public long getProductId() {
@@ -32,11 +32,11 @@ public class Product {
         this.name = pName;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
