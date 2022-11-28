@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import arp.training.cloudkitchen.model.Category;
 import arp.training.cloudkitchen.services.CategoryService;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.swagger.v3.oas.models.annotations.OpenAPI30;
 
 
@@ -22,23 +23,27 @@ public class CategoryController {
     @Autowired
     CategoryService categoryService;
 
-    @PostMapping("/menu/v1/categories")
+    @PostMapping("/menu/v1/category")
+    @RateLimiter(name = "postCategory")
     private void saveCategory(@RequestBody Category category) {
          categoryService.saveOrUpdate(category);
     }
 
     @GetMapping(value = "/menu/v1/categories")
-    public List<Category> getCategory() {
+    @RateLimiter(name = "getCategories")
+    public List<Category> getCategories() {
         return categoryService.getCategoryList();
     }
 
-    @GetMapping(value = "/menu/v1/categories/{categoryId}")
+    @GetMapping(value = "/menu/v1/category/{categoryId}")
+    @RateLimiter(name = "getCategoryById")
     public Category getCategory(@PathVariable("categoryId") Long categeoryId) {
         return categoryService.getCategory(categeoryId);
     }
 
 
-    @DeleteMapping("/menu/v1/categories/{categoryId}")
+    @DeleteMapping("/menu/v1/category/{categoryId}")
+    @RateLimiter(name = "deleteCategoryById")
     @OpenAPI30
     private void deleteCategory(@PathVariable("categoryId") Long categoryId) {
         categoryService.deleteCategoryById(categoryId);
