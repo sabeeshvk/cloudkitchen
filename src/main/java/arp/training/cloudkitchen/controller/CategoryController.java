@@ -25,18 +25,21 @@ public class CategoryController {
 
     @PostMapping("/menu/v1/category")
     @RateLimiter(name = "postCategory")
+    @OpenAPI30
     private void saveCategory(@RequestBody Category category) {
          categoryService.saveOrUpdate(category);
     }
 
     @GetMapping(value = "/menu/v1/categories")
     @RateLimiter(name = "getCategories")
+    @OpenAPI30
     public List<Category> getCategories() {
         return categoryService.getCategoryList();
     }
 
     @GetMapping(value = "/menu/v1/category/{categoryId}")
     @RateLimiter(name = "getCategoryById")
+    @OpenAPI30
     public Category getCategory(@PathVariable("categoryId") Long categeoryId) {
         return categoryService.getCategory(categeoryId);
     }

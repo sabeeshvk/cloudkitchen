@@ -14,6 +14,7 @@ import arp.training.cloudkitchen.model.Product;
 import arp.training.cloudkitchen.services.ProductService;
 
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.swagger.v3.oas.models.annotations.OpenAPI30;
 
 
 @RestController
@@ -24,6 +25,7 @@ public class ProductController {
 
     @PostMapping("/menu/v1/product")
     @RateLimiter(name = "postProduct")
+    @OpenAPI30
     private long saveProduct(@RequestBody Product product) {
         productService.saveOrUpdate(product);
         return product.getProductId();
@@ -31,12 +33,14 @@ public class ProductController {
 
     @GetMapping(value = "/menu/v1/products")
     @RateLimiter(name = "getProducts")
+    @OpenAPI30
     public List<Product> getProduct() {
         return productService.getProductList();
     }
 
     @GetMapping(value = "/menu/v1/products/{productId}")
     @RateLimiter(name = "getproductById")
+    @OpenAPI30
     public Product getProduct(@PathVariable("productId") Long productId) {
         return productService.getProduct(productId);
     }
@@ -44,6 +48,7 @@ public class ProductController {
 
     @DeleteMapping("/menu/v1/products/{productId}")
     @RateLimiter(name = "deleteProductById")
+    @OpenAPI30
     private void deleteProduct(@PathVariable("productId") Long productId) {
         productService.deleteProductById(productId);
     }
