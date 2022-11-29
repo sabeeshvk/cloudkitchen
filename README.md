@@ -4,6 +4,7 @@ This is a training assignment project that I have built on springboot to be depl
 Following features have been added 
 
 * Springboot JPA
+* Springboot Actuator
 * In memory database - HSQL 
 * Cloud DB - YugaByte ( Postgres)
 * Jasypt encryption
