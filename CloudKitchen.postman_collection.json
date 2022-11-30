@@ -1,0 +1,439 @@
+{
+	"info": {
+		"_postman_id": "584cbd8c-77d1-40de-948c-41e533bbcd2e",
+		"name": "CloudKitchen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6252071"
+	},
+	"item": [
+		{
+			"name": "Actuator Get beans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/beans",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"beans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Loggers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/logfile",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"logfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Caches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/caches",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"caches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Config Props",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/configprops",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"configprops"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/metrics",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Metrics - Active Threads",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/metrics/executor.active",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"metrics",
+						"executor.active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Loggers Class",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/loggers/org.hibernate.type",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"loggers",
+						"org.hibernate.type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Logger - Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"configuredLevel\": \"TRACE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/actuator/loggers/org.hibernate.type",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"loggers",
+						"org.hibernate.type"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/health",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actuator Threaddump",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/actuator/threaddump",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"threaddump"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoryId\":1,\n    \"categoryName\":\"Sandwitches\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/menu/v1/category",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoryId\":2,\n    \"categoryName\":\"Pizza\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/menu/v1/category",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoryId\":3,\n    \"categoryName\":\"Desserts\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/menu/v1/category",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category 4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoryId\":4,\n    \"categoryName\":\"Rotis\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/menu/v1/category",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu/v1/categories",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu/v1/categories/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"categories",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu/v1/categories/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"categories",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"productId\": 1,\n  \"price\": 80,\n  \"description\": \"Sandwitch with falafel\",\n  \"name\": \"Med Sandwitch\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/menu/v1/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/menu/v1/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"menu",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
