@@ -1,0 +1,7 @@
+FROM tomcat
+ARG JAR_FILE=target/*.war
+COPY ${JAR_FILE} /opt/tomcat/webapps
+
+EXPOSE 8080
+
+CMD ["catalina.sh", "run"]

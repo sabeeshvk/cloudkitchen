@@ -2,6 +2,7 @@ package arp.training.cloudkitchen.controller;
 
 import java.util.List;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,8 @@ import io.swagger.v3.oas.models.annotations.OpenAPI30;
 @RestController
 public class CategoryController {
 
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(CategoryController.class);
+
     @Autowired
     CategoryService categoryService;
 
@@ -27,7 +30,8 @@ public class CategoryController {
     @RateLimiter(name = "postCategory")
     @OpenAPI30
     private void saveCategory(@RequestBody Category category) {
-         categoryService.saveOrUpdate(category);
+        log.info("Category " + category);
+        categoryService.saveOrUpdate(category);
     }
 
     @GetMapping(value = "/menu/v1/categories")

@@ -2,6 +2,9 @@ package arp.training.cloudkitchen.controller;
 
 import java.util.List;
 
+import com.google.gson.Gson;
+
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +23,8 @@ import io.swagger.v3.oas.models.annotations.OpenAPI30;
 @RestController
 public class ProductController {
 
+    private static final org.slf4j.Logger log = LoggerFactory.getLogger(ProductController.class);
+
     @Autowired
     ProductService productService;
 
@@ -27,6 +32,7 @@ public class ProductController {
     @RateLimiter(name = "postProduct")
     @OpenAPI30
     private long saveProduct(@RequestBody Product product) {
+        log.info("Product " + new Gson().toJson(product));
         productService.saveOrUpdate(product);
         return product.getProductId();
     }

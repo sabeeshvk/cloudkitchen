@@ -28,6 +28,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void saveOrUpdate(Product product) {
+        log.info("Product " + product);
         productRepository.save(product);
         log.info("Product saved , ID = " + product.getProductId());
     }
@@ -40,6 +41,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProduct(Long id) {
         return productRepository.getReferenceById(id);
+    }
+
+    ProductServiceImpl () {
+        log.info("*********************** I am here ***************************");
     }
 
 }

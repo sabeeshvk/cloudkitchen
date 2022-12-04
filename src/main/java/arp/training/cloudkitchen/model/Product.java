@@ -1,13 +1,17 @@
 package arp.training.cloudkitchen.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+//import org.springframework.data.relational.core.mapping.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table
+@Table // (name="product")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Product {
     @Id 
@@ -15,6 +19,10 @@ public class Product {
     private String name;
     private float price;
     private String description;
+
+    // @ManyToOne(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "category_id")    
+    // private Category category;
 
     public long getProductId() {
         return productId;
