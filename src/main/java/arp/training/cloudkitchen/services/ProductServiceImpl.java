@@ -44,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     ProductServiceImpl () {
-        log.info("*********************** I am here ***************************");
+        log.info("*********************** ProductServiceImpl **********************" + productRepository.toString());
     }
 
 }
