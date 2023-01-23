@@ -29,7 +29,7 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping("/menu/v1/product")
-//    @RateLimiter(name = "postProduct")
+//    @RateLimiter(name = "postProduct")  // Commenting as this is causing issue
     @OpenAPI30
     private long saveProduct(@RequestBody Product product) {
         log.info("Product " + new Gson().toJson(product));
