@@ -27,7 +27,7 @@ public class CategoryController {
     CategoryService categoryService;
 
     @PostMapping("/menu/v1/category")
-    @RateLimiter(name = "postCategory")
+  //  @RateLimiter(name = "postCategory")
     @OpenAPI30
     private void saveCategory(@RequestBody Category category) {
         log.info("Category " + category);
@@ -35,14 +35,14 @@ public class CategoryController {
     }
 
     @GetMapping(value = "/menu/v1/categories")
-    @RateLimiter(name = "getCategories")
+   // @RateLimiter(name = "getCategories")
     @OpenAPI30
     public List<Category> getCategories() {
         return categoryService.getCategoryList();
     }
 
     @GetMapping(value = "/menu/v1/category/{categoryId}")
-    @RateLimiter(name = "getCategoryById")
+  //  @RateLimiter(name = "getCategoryById")
     @OpenAPI30
     public Category getCategory(@PathVariable("categoryId") Long categeoryId) {
         return categoryService.getCategory(categeoryId);
@@ -50,7 +50,7 @@ public class CategoryController {
 
 
     @DeleteMapping("/menu/v1/category/{categoryId}")
-    @RateLimiter(name = "deleteCategoryById")
+  //  @RateLimiter(name = "deleteCategoryById")
     @OpenAPI30
     private void deleteCategory(@PathVariable("categoryId") Long categoryId) {
         categoryService.deleteCategoryById(categoryId);
