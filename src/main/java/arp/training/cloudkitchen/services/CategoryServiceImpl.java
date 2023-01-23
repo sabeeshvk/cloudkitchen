@@ -20,6 +20,11 @@ public class CategoryServiceImpl implements CategoryService{
 
     private static final Logger log = LoggerFactory.getLogger(CategoryServiceImpl.class);
 
+    public CategoryServiceImpl () {
+        log.info(" %%%%%%%%%% CategoryServiceImpl constructor %%%%%%% - Got repository : " + categoryRepository);
+    }
+
+
     @Override
     public List<Category> getCategoryList() {
         return categoryRepository.findAll();
