@@ -29,7 +29,7 @@ public class ProductController {
     ProductService productService;
 
     @PostMapping("/menu/v1/product")
-    @RateLimiter(name = "postProduct")
+//    @RateLimiter(name = "postProduct")
     @OpenAPI30
     private long saveProduct(@RequestBody Product product) {
         log.info("Product " + new Gson().toJson(product));
@@ -38,14 +38,14 @@ public class ProductController {
     }
 
     @GetMapping(value = "/menu/v1/products")
-    @RateLimiter(name = "getProducts")
+//    @RateLimiter(name = "getProducts")
     @OpenAPI30
     public List<Product> getProduct() {
         return productService.getProductList();
     }
 
     @GetMapping(value = "/menu/v1/products/{productId}")
-    @RateLimiter(name = "getproductById")
+//    @RateLimiter(name = "getproductById")
     @OpenAPI30
     public Product getProduct(@PathVariable("productId") Long productId) {
         return productService.getProduct(productId);
@@ -53,7 +53,7 @@ public class ProductController {
 
 
     @DeleteMapping("/menu/v1/products/{productId}")
-    @RateLimiter(name = "deleteProductById")
+//    @RateLimiter(name = "deleteProductById")
     @OpenAPI30
     private void deleteProduct(@PathVariable("productId") Long productId) {
         productService.deleteProductById(productId);
