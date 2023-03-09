@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
         JASYPT_ENCRYPTOR_PASSWORD: ${{secrets.JASYPT_ENCRYPTOR_PASSWORD}}
+        REGISTRY: ghcr.io
+        IMAGE_NAME: ${{ github.repository }}
 
     steps:
     - name: Public IP
