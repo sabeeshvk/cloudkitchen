@@ -43,7 +43,13 @@ jobs:
       
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag cloudkitchen:$(date +%s)  
-            
+
+ # https://github.com/marketplace/actions/push-to-ghcr
+    - name: Build and publish a Docker image for ${{ github.repository }}
+      uses: macbre/push-to-ghcr@master
+      with:
+          image_name: ${{ github.repository }}  # it will be lowercased internally
+          github_token: ${{ secrets.GHCR }}
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
