@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudkitchen
+spec:
+  selector:
+    matchLabels:
+      app: cloudkitchen
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: cloudkitchen
+    spec:
+      containers:
+        - name: cloudkitchen
+          image: ghcr.io/sabeeshvk/cloudkitchen:main
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 100Mi
+              
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "production"
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+      restartPolicy: Always
