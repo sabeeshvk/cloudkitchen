@@ -14,14 +14,6 @@ spec:
     spec:
       containers:
         - name: cloudkitchen
-          image: ghcr.io/sabeeshvk/cloudkitchen:main
-          resources:
-            requests:
-              cpu: 100m
-              memory: 100Mi
-            limits:
-              cpu: 100m
-              memory: 100Mi
-              
+          image: ghcr.io/sabeeshvk/cloudkitchen:main              
           ports:
             - containerPort: 8080
