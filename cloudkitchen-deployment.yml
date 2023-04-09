@@ -15,5 +15,6 @@ spec:
       containers:
         - name: cloudkitchen
           image: ghcr.io/sabeeshvk/cloudkitchen:main              
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
