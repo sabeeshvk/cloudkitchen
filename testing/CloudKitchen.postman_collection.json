@@ -12,11 +12,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/beans",
+					"raw": "{{serverURL}}/actuator/beans",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"beans"
@@ -31,11 +30,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/logfile",
+					"raw": "{{serverURL}}/actuator/logfile",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"logfile"
@@ -50,11 +48,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/caches",
+					"raw": "{{serverURL}}/actuator/caches",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"caches"
@@ -69,11 +66,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/configprops",
+					"raw": "{{serverURL}}/actuator/configprops",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"configprops"
@@ -107,11 +103,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/metrics/executor.active",
+					"raw": "{{serverURL}}/actuator/metrics/executor.active",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"metrics",
@@ -127,11 +122,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/loggers/org.hibernate.type",
+					"raw": "{{serverURL}}/actuator/loggers/org.hibernate.type",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"loggers",
@@ -156,11 +150,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/actuator/loggers/org.hibernate.type",
+					"raw": "{{serverURL}}/actuator/loggers/org.hibernate.type",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"loggers",
@@ -176,11 +169,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/health",
+					"raw": "{{serverURL}}/actuator/health",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"health"
@@ -195,11 +187,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/actuator/threaddump",
+					"raw": "{{serverURL}}/actuator/threaddump",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"actuator",
 						"threaddump"
@@ -223,11 +214,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/menu/v1/category",
+					"raw": "{{serverURL}}/menu/v1/category",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
@@ -252,11 +242,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/menu/v1/category",
+					"raw": "{{serverURL}}/menu/v1/category",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
@@ -281,11 +270,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/menu/v1/category",
+					"raw": "{{serverURL}}/menu/v1/category",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
@@ -310,11 +298,10 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/menu/v1/category",
+					"raw": "{{serverURL}}/menu/v1/category",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
@@ -330,11 +317,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/menu/v1/categories",
+					"raw": "{{serverURL}}/menu/v1/categories",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
@@ -350,16 +336,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/menu/v1/categories/4",
+					"raw": "{{serverURL}}/menu/v1/category/2",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
-						"categories",
-						"4"
+						"category",
+						"2"
 					]
 				}
 			},
@@ -371,11 +356,10 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/menu/v1/categories/3",
+					"raw": "{{serverURL}}/menu/v1/categories/3",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
@@ -393,7 +377,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"productId\": 1,\n  \"price\": 80,\n  \"description\": \"Sandwitch with falafel\",\n  \"name\": \"Med Sandwitch\"\n}",
+					"raw": "{\n    \"productId\": 1,\n    \"price\": 80,\n    \"description\": \"Sandwitch with egg\",\n    \"name\": \"Egg Sandwitch\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -401,15 +385,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/menu/v1/products",
+					"raw": "{{serverURL}}/menu/v1/product",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
-						"products"
+						"product"
 					]
 				}
 			},
@@ -421,11 +404,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/menu/v1/products",
+					"raw": "{{serverURL}}/menu/v1/products",
 					"host": [
-						"localhost"
+						"{{serverURL}}"
 					],
-					"port": "8080",
 					"path": [
 						"menu",
 						"v1",
