@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "584cbd8c-77d1-40de-948c-41e533bbcd2e",
+		"_postman_id": "e07b0ad9-215b-465a-9f94-6c57095db7d4",
 		"name": "CloudKitchen",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "6252071"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -19,24 +18,6 @@
 					"path": [
 						"actuator",
 						"beans"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Actuator Loggers",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{serverURL}}/actuator/logfile",
-					"host": [
-						"{{serverURL}}"
-					],
-					"path": [
-						"actuator",
-						"logfile"
 					]
 				}
 			},
