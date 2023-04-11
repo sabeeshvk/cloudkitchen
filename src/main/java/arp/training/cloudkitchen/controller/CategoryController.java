@@ -1,5 +1,7 @@
 package arp.training.cloudkitchen.controller;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.List;
 
 import org.slf4j.LoggerFactory;
@@ -30,6 +32,12 @@ public class CategoryController {
   //  @RateLimiter(name = "postCategory")
     @OpenAPI30
     private void saveCategory(@RequestBody Category category) {
+        try {
+          log.info("%%%%%% Host: " + InetAddress.getLocalHost().getHostName());
+        } catch (UnknownHostException e) {
+          log.error("Host: unknown");
+        }
+
         log.info("Category " + category);
         categoryService.saveOrUpdate(category);
     }
@@ -38,14 +46,24 @@ public class CategoryController {
    // @RateLimiter(name = "getCategories")
     @OpenAPI30
     public List<Category> getCategories() {
-        return categoryService.getCategoryList();
+      try {
+        log.info("%%%%%% Host: " + InetAddress.getLocalHost().getHostName());
+      } catch (UnknownHostException e) {
+        log.error("Host: unknown");
+      }
+      return categoryService.getCategoryList();
     }
 
     @GetMapping(value = "/menu/v1/category/{categoryId}")
   //  @RateLimiter(name = "getCategoryById")
     @OpenAPI30
-    public Category getCategory(@PathVariable("categoryId") Long categeoryId) {
-        return categoryService.getCategory(categeoryId);
+   public Category getCategory(@PathVariable("categoryId") Long categeoryId) {
+      try {
+        log.info("%%%%%% Host: " + InetAddress.getLocalHost().getHostName());
+      } catch (UnknownHostException e) {
+        log.error("Host: unknown");
+      }
+      return categoryService.getCategory(categeoryId);
     }
 
 
@@ -53,7 +71,12 @@ public class CategoryController {
   //  @RateLimiter(name = "deleteCategoryById")
     @OpenAPI30
     private void deleteCategory(@PathVariable("categoryId") Long categoryId) {
-        categoryService.deleteCategoryById(categoryId);
+      try {
+        log.info("%%%%%% Host: " + InetAddress.getLocalHost().getHostName());
+      } catch (UnknownHostException e) {
+        log.error("Host: unknown");
+      }
+      categoryService.deleteCategoryById(categoryId);
     }
 
 }
