@@ -1,4 +1,4 @@
-Azure shell commands to manage the AKS cluster and deplyments
+#Azure shell commands to manage the AKS cluster and deplyments
 
 # Get the K8S credential to the local config file sp kubectl can talk to AKS cluster
 az aks get-credentials --resource-group aks0409 --name aksdemo
@@ -8,6 +8,14 @@ az group delete --resource-group aks0409
 
 # K8s deployment
 kubectl apply -f https://raw.githubusercontent.com/sabeeshvk/cloudkitchen/main/cloudkitchen-deployment.yml
+
+kubectl get pods -o wide
+
+# K8s load balancer / reverse proxy
+kubectl apply -f https://raw.githubusercontent.com/sabeeshvk/cloudkitchen/main/aks-public-svc.yml
+
+kubectl get services -o wide
+
 
 # Check log for a container
 kubectl logs -f cloudkitchen-66c98fcd6f-rtw5z  
