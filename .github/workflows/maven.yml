@@ -24,14 +24,15 @@ jobs:
         IMAGE_NAME: ${{ github.repository }}
 
     steps:
-    - name: Public IP
-      id: ip
-      uses: haythem/public-ip@v1.3
+    
+    # - name: Public IP
+    #   id: ip
+    #   uses: haythem/public-ip@v1.3
 
-    - name: Print Public IP
-      run: |
-        echo ${{ steps.ip.outputs.ipv4 }}
-        echo ${{ steps.ip.outputs.ipv6 }}
+    # - name: Print Public IP
+    #   run: |
+    #     echo ${{ steps.ip.outputs.ipv4 }}
+    #     echo ${{ steps.ip.outputs.ipv6 }}
         
     - uses: actions/checkout@v3
     - name: Set up JDK 11
