@@ -44,12 +44,11 @@
 			<version>2.7.5</version>
 		</dependency>
 
-		<dependency>
+		<!--dependency>
 			<groupId>com.yugabyte</groupId>
 			<artifactId>spring-data-yugabytedb-ysql</artifactId>
 			<version>2.3.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.yugabyte</groupId>
 			<artifactId>jdbc-yugabytedb</artifactId>
@@ -59,7 +58,7 @@
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>42.3.4</version>
-		</dependency>
+		</dependency-->
 
 		<!-- In memory DB.  Comment Yugabyte entries above when using this -->
 		<dependency>
