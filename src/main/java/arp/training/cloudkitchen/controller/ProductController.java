@@ -47,7 +47,7 @@ public class ProductController {
     @GetMapping(value = "/menu/v1/products/{productId}")
 //    @RateLimiter(name = "getproductById")
     @OpenAPI30
-    public Product getProduct(@PathVariable("productId") Long productId) {
+    public Product getProduct(@PathVariable Long productId) {
         return productService.getProduct(productId);
     }
 
@@ -55,7 +55,7 @@ public class ProductController {
     @DeleteMapping("/menu/v1/products/{productId}")
 //    @RateLimiter(name = "deleteProductById")
     @OpenAPI30
-    private void deleteProduct(@PathVariable("productId") Long productId) {
+    private void deleteProduct(@PathVariable Long productId) {
         productService.deleteProductById(productId);
     }
 

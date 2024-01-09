@@ -70,7 +70,7 @@ public class CategoryController {
     @DeleteMapping("/menu/v1/category/{categoryId}")
   //  @RateLimiter(name = "deleteCategoryById")
     @OpenAPI30
-    private void deleteCategory(@PathVariable("categoryId") Long categoryId) {
+    private void deleteCategory(@PathVariable Long categoryId) {
       try {
         log.info("%%%%%% Host: " + InetAddress.getLocalHost().getHostName());
       } catch (UnknownHostException e) {

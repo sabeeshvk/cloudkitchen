@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.5</version>
+		<version>3.2.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>arp.training</groupId>
@@ -14,7 +14,7 @@
 	<name>cloudkitchen</name>
 	<description>Demo app for Cloud Kitchen Menu</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <spotless.version>2.17.4</spotless.version>
         <testcontainers.version>1.17.6</testcontainers.version>
         <awaitility.version>4.2.0</awaitility.version>
@@ -23,25 +23,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.7.5</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<version>2.7.5</version>
 			<scope>test</scope>
 		</dependency>
 	<dependency>
    			 <groupId>org.springframework.data</groupId>
     		<artifactId>spring-data-jpa</artifactId>
-    		<version>2.7.5</version>
 	</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-			<version>2.7.5</version>
 		</dependency>
 
 		<!--dependency>
@@ -71,13 +67,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-			<version>2.7.5</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.6.12</version>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.3.0</version>
 		</dependency>
 
 		<!--dependency>
@@ -103,7 +98,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
-			<version>2.7.5</version>
 		</dependency>
 
 		<dependency>
@@ -119,9 +113,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-			<version>3.1.9</version>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-tracing-bridge-brave</artifactId>
 			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.cloud</groupId>
@@ -130,9 +123,8 @@
 		   </exclusions>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-otel-autoconfigure</artifactId>
-			<version>1.1.4</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator-autoconfigure</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.opentelemetry</groupId>
@@ -150,6 +142,26 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-maven-plugin</artifactId>
 		</plugin>
+
+		<plugin>
+			<groupId>org.openrewrite.maven</groupId>
+			<artifactId>rewrite-maven-plugin</artifactId>
+			<version>5.17.1</version>
+			<configuration>
+			  <activeRecipes>
+			<recipe>org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2</recipe>
+			  </activeRecipes>
+			</configuration>
+			<dependencies>
+			  <dependency>
+						  <groupId>org.openrewrite.recipe</groupId>
+						  <artifactId>rewrite-spring</artifactId>
+						  <version>5.1.7</version>
+			  </dependency>
+			</dependencies>
+</plugin>
+
+		
 	</plugins>	
 </build>
 

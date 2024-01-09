@@ -1,6 +1,6 @@
-FROM tomcat:8.5-alpine
+FROM tomcat:latest
 ARG JAR_FILE=target/*.war
-COPY ${JAR_FILE} /opt/tomcat/webapps
+COPY ${JAR_FILE} /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 
